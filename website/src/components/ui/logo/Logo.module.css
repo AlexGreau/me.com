@@ -1,0 +1,12 @@
+.secondary {
+    opacity: 0.3;
+    color: inherit;
+    font-family: var(--logo-font);
+    font-weight: var(--logo-weight);
+}
+
+.logo {
+    color: var(--logo-color);
+    font-family: var(--logo-font);
+    font-weight: var(--logo-weight);
+}
