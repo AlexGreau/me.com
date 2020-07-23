@@ -3,9 +3,9 @@ import classes from './Logo.module.css';
 
 const Logo = (props) => {
     return (
-        <a className={classes.logo}>
+        <div className={classes.logo}>
             Alex<span className={classes.secondary}>Greau</span>
-        </a>
+        </div>
     )
 }
 export default Logo;

@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Layout.module.css';
 import Navbar from '../../components/navigation/toolbar/Navbar';
+import SelfPres from '../../components/description/self/SelfPres';
 
 const Layout = (props) => {
     return (
@@ -8,7 +9,7 @@ const Layout = (props) => {
         <React.Fragment>
             <Navbar className={classes.nav}></Navbar>
             <main className={classes.container}>
-                <h1 className={classes.presentation}>Hi, I'm Alex</h1>
+                <SelfPres></SelfPres>
                 {props.children}
             </main>
         </React.Fragment>

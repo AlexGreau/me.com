@@ -1,0 +1,39 @@
+.Subtitle {
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.Hi {
+    color: var(--primary-color);
+}
+
+.Separator {
+    width: 50px;
+    margin-left: 0;
+}
+
+.Intro {
+    /* font-size: medium; */
+    color: var(--text-color);
+}
+
+@media (max-width: 499px) {
+    .Intro {
+        display: none;
+    }
+
+    .Separator {
+        display: none;
+    }
+
+    .Hi{
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .Subtitle{
+        text-align: center;
+        font-size: 18px;
+    }
+}

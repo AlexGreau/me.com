@@ -5,23 +5,25 @@
     width: 90%;
     margin: 50px auto 20px auto;
     max-width: 1200px;
+    align-items: baseline
 }
 
 .resume{
     cursor: pointer;
     width: 45%;
     text-align: end;
+    font-size: 24px;
 }
 
 @media (max-width: 499px) {
     .NavBar {
-        flex-direction: column;
-        justify-content: center;
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        margin-top: 20px;
+        margin-bottom: 15px ;
     }
 
     .resume {
-        width: 100%;
-        text-align: center;
         font-size: 22px;
     }
 }

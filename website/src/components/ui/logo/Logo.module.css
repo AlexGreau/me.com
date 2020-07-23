@@ -1,14 +1,14 @@
 .secondary {
     opacity: 0.3;
     color: inherit;
-    font-family: var(--logo-font);
-    font-weight: var(--logo-weight);
+    font-family: Consolas;
+    font-weight: 900;
 }
 
 .logo {
     color: var(--logo-color);
-    font-family: var(--logo-font);
-    font-weight: var(--logo-weight);
+    font-family:Consolas;
+    font-weight: 900;
     display: inline-block;
     cursor: pointer;
     text-align: center;
