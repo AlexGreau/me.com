@@ -1,3 +1,13 @@
 .presentation {
     color: var(--primary-color);
 }
+
+.container {
+    padding: 20px;
+}
+
+.nav {
+    margin-top: 50px auto;
+    margin-bottom: 20px;
+    width: 90%;
+}

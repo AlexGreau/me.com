@@ -1,0 +1,27 @@
+.NavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 50px auto 20px auto;
+    max-width: 1200px;
+}
+
+.resume{
+    cursor: pointer;
+    width: 45%;
+    text-align: end;
+}
+
+@media (max-width: 499px) {
+    .NavBar {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .resume {
+        width: 100%;
+        text-align: center;
+        font-size: 22px;
+    }
+}

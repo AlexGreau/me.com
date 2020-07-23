@@ -4,8 +4,9 @@ import Logo from '../../ui/logo/Logo';
 
 const Navbar = (props) => {
     return (
-        <nav>
+        <nav className={classes.NavBar + ' ' + props.className}>
             <Logo></Logo>
+            <div className={classes.resume}>Resume</div>
         </nav>
     )
 }
