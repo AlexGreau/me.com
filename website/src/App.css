@@ -2,8 +2,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  font-size: 18px;
   overflow-x: hidden !important;
+  margin: 0 auto;
 }
 
 .light-theme {
@@ -13,8 +14,6 @@
   --text-color: black;
   --logo-color: black;
   --link-color: salmon;
-  --logo-font: Consolas;
-  --logo-weight: 900;
 }
 
 .App-link {
