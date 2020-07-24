@@ -9,7 +9,7 @@ const Navbar = (props) => {
         return (
             <nav className={classes.NavBar + ' ' + props.className}>
                 <Logo></Logo>
-                <div className={classes.resume} onClick={firebase.getCV}>Resume</div>
+                <button className={classes.resume} onClick={firebase.getCV}>Resume</button>
             </nav>
         )
     }
