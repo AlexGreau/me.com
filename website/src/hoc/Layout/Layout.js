@@ -8,12 +8,11 @@ const Layout = (props) => {
 
         <React.Fragment>
             <Navbar className={classes.nav}></Navbar>
-            <header>
-                <div className={classes.header}>
+            <header className={classes.header}> 
                     <SelfPres></SelfPres>
-                </div>
             </header>
-            <main >
+            <main className={classes.main}>
+                <hr className={classes.separator}/>
                 {props.children}
             </main>
         </React.Fragment>
