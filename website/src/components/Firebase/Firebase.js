@@ -1,7 +1,6 @@
 import app from 'firebase/app';
 import "firebase/storage";
 import {RESUME, PROFILE_PIC} from '../../constants/Routes';
-import React from "react"
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -42,6 +41,8 @@ class Firebase {
                 case 'storage/unknown':
                     // Unknown error occurred, inspect the server response
                     break;
+                default :
+                    console.error(error)
             }
         });
     }
@@ -50,16 +51,6 @@ class Firebase {
         return this.storage.refFromURL("gs://mecom-8f0c4.appspot.com")
         .child(PROFILE_PIC)
         .getDownloadURL();
-
-        // this.storage.refFromURL("gs://mecom-8f0c4.appspot.com")
-        // .child(PROFILE_PIC)
-        // .getDownloadURL()
-        // .then(function (url) {
-        //     console.log("url in firebase object ", url)
-        //     return url;
-        // }).catch(function (error) {
-        //    console.error(error)
-        // });
     }
 }
 

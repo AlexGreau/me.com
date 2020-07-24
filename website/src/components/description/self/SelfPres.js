@@ -8,7 +8,7 @@ import Spinner from '../../ui/spinner/Spinner'
 const SelfPres = (props) => {
     const [imgURL, setImgURL] = useState(null);
     const img = (firebase) => {
-        const Url = firebase.getProfileImg()
+        firebase.getProfileImg()
             .then(function (url) {
                 setImgURL(url)
                 return url;
@@ -19,11 +19,11 @@ const SelfPres = (props) => {
         return (
             imgURL ? (
                 <img
-                className={classes.ProfilePic}
+                    className={classes.ProfilePic}
                     src={imgURL}
                     alt="My profile pic"
                 ></img>)
-                : <Spinner/>)
+                : <Spinner />)
     };
 
     return (
