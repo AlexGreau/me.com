@@ -16,8 +16,7 @@ function App() {
           </Route>
           <Route path={HOME} component={Layout}></Route>
         </Switch>
-
-      </Router>
+      </Router>  
     </div>
   );
 }
