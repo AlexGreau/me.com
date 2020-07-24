@@ -1,11 +1,14 @@
 .Subtitle {
     text-transform: uppercase;
     color: var(--secondary-color);
-    font-weight: bold;
+    font-weight: 500;
+    font-style: normal;
 }
 
 .Hi {
     color: var(--primary-color);
+    font-weight: 800;
+    font-style: normal;
 }
 
 .Separator {
@@ -15,21 +18,24 @@
 
 .Container {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
 }
 
 .TitleModule {
     flex: 1;
-
 }
 
 .ImgModule {
-    flex: 1;
     text-align: end;
+    width: 200px;
+    height: 200px;
+    margin-left: 25px;
 }
 
 .ProfilePic {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     text-align: center;
     /* object-fit: cover; */
@@ -40,13 +46,38 @@
     color: var(--text-color);
 }
 
-@media (max-width: 499px) {
+@media (max-width:800px) {
     .Intro {
         display: none;
     }
 
     .Separator {
         display: none;
+    }
+
+    .ImgModule {
+        width: 150px;
+        height: 150px;
+    }
+
+    .TitleModule {
+        width: 700px;
+    }
+
+    .Container {
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+    }
+}
+
+@media (max-width : 550px) {
+    .ImgModule {
+        width: 100px;
+        height: 100px;
+    }
+
+    .TitleModule {
+        flex : 0 0 100%;
     }
 
     .Hi{
@@ -58,4 +89,6 @@
         text-align: center;
         font-size: 18px;
     }
+
+    
 }
