@@ -13,6 +13,28 @@
     margin-left: 0;
 }
 
+.Container {
+    display: flex;
+}
+
+.TitleModule {
+    flex: 1;
+
+}
+
+.ImgModule {
+    flex: 1;
+    text-align: end;
+}
+
+.ProfilePic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    text-align: center;
+    /* object-fit: cover; */
+}
+
 .Intro {
     /* font-size: medium; */
     color: var(--text-color);

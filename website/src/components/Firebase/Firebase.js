@@ -1,6 +1,6 @@
 import app from 'firebase/app';
 import "firebase/storage";
-import {RESUME} from '../../constants/Routes';
+import {RESUME, PROFILE_PIC} from '../../constants/Routes';
 import React from "react"
 
 const firebaseConfig = {
@@ -22,7 +22,7 @@ class Firebase {
 
     getCV = () => {
         this.storage.refFromURL("gs://mecom-8f0c4.appspot.com")
-        .child('Me/Resume_2020.pdf')
+        .child(RESUME)
         .getDownloadURL()
         .then(function (url) {
             window.open(url, 'yoyoyo');
@@ -44,6 +44,22 @@ class Firebase {
                     break;
             }
         });
+    }
+
+    getProfileImg = () => {
+        return this.storage.refFromURL("gs://mecom-8f0c4.appspot.com")
+        .child(PROFILE_PIC)
+        .getDownloadURL();
+
+        // this.storage.refFromURL("gs://mecom-8f0c4.appspot.com")
+        // .child(PROFILE_PIC)
+        // .getDownloadURL()
+        // .then(function (url) {
+        //     console.log("url in firebase object ", url)
+        //     return url;
+        // }).catch(function (error) {
+        //    console.error(error)
+        // });
     }
 }
 
