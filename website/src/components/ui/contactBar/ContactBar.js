@@ -9,8 +9,6 @@ import ContactItem from './contactItem/ContactItem';
 const ContactBar = (props) => {
     return (
         <div className={classes.Container}>
-            <Logo/>
-            <hr className={classes.Separator}/>
             <div className={classes.ContactBar}>
                 {
                     CONTACTS.map(SOCIAL => {
