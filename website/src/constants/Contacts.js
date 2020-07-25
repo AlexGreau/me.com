@@ -2,13 +2,6 @@ import email from '../assets/contactLogos/email.png'
 import github from '../assets/contactLogos/github.png'
 import linkedIn from '../assets/contactLogos/linkedin.png'
 
-// List of all the contact to be rendered in contact bar
-const CONTACTS = [
-    LinkedIn,
-    Github,
-    Email
-]
-
 // Linkedin
 const LinkedIn = {
     index: 1,
@@ -32,6 +25,13 @@ const Email = {
     link: 'mailto:alexgreau@live.fr',
     img: email
 }
+
+// List of all the contact to be rendered in contact bar
+const CONTACTS = [
+    LinkedIn,
+    Github,
+    Email
+]
 
 
 
