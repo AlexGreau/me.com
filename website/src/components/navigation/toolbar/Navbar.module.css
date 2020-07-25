@@ -5,21 +5,6 @@
     align-items: baseline
 }
 
-.resume{
-    cursor: pointer;
-    text-align: end;
-    font-size: 24px;
-    font-weight: 900;
-    font-family: Consolas;
-    background-color: transparent;
-    border: transparent;
-}
-
-.resume:hover {
-    box-sizing: border-box;
-    border-bottom: 2px solid black;
-}
-
 @media (max-width: 550px) {
     .resume {
         font-size: 22px;

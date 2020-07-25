@@ -13,3 +13,18 @@
     opacity: 0.8;
     margin-bottom: 10px;
 }
+
+.resume{
+    cursor: pointer;
+    text-align: end;
+    font-size: 24px;
+    font-weight: 900;
+    font-family: Consolas;
+    background-color: transparent;
+    border: transparent;
+}
+
+.resume:hover {
+    box-sizing: border-box;
+    border-bottom: 2px solid black;
+}
