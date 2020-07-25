@@ -4,3 +4,12 @@
     width: 100%;
     justify-content: center;
 }
+
+.Separator {
+    width: 50px ;
+    margin: auto;
+    border-top: 1px;
+    color: var(--separator-color);
+    opacity: 0.8;
+    margin-bottom: 10px;
+}

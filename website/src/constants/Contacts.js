@@ -22,7 +22,7 @@ const Github = {
 const Email = {
     id: 3,
     name: "Email",
-    link: 'mailto:alexgreau@live.fr',
+    link: 'mailto:' + process.env.REACT_APP_EMAIL_ADDRESS,
     img: email
 }
 

@@ -7,19 +7,22 @@ import ContactBar from '../../components/ui/contactBar/ContactBar';
 const Layout = (props) => {
     return (
 
-        <React.Fragment>
+        <div className={classes.container}>
             <Navbar className={classes.nav}></Navbar>
-            <header className={classes.header}> 
-                    <SelfPres></SelfPres>
+            <header className={classes.header}>
+                <SelfPres></SelfPres>
             </header>
+
+            <hr className={classes.separator} />
             <main className={classes.main}>
-                <hr className={classes.separator}/>
                 {props.children}
             </main>
-            <footer>
-                <ContactBar/>
+
+            <hr className={classes.separator} />
+            <footer className={classes.footer}>
+                <ContactBar />
             </footer>
-        </React.Fragment>
+        </div>
     )
 }
 export default Layout;
