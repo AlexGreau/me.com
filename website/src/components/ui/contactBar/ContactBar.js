@@ -7,7 +7,7 @@ import ContactItem from './contactItem/ContactItem';
 
 const ContactBar = (props) => {
     return (
-        <div>
+        <div className={classes.ContactBar}>
             {
                 CONTACTS.map(SOCIAL => {
                     return (

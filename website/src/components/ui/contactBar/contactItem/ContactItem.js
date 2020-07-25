@@ -5,8 +5,8 @@ const Contactitem = (props) => {
     const { name, link, img } = props.social;
 
     return (
-        <a href={link}>
-            <img src={img} alt={name} className="socialProfileImg" />
+        <a href={link} className={classes.item}>
+            <img src={img} alt={name} className={classes.img} />
         </a>
     )
 }

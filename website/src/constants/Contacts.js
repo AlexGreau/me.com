@@ -14,7 +14,7 @@ const LinkedIn = {
 const Github = {
     id: 2,
     name: "Github",
-    link: 'https://github.com/AlexGreau/Alex-Portfolio',
+    link: 'https://github.com/AlexGreau/me.com',
     img: github
 }
 

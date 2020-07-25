@@ -1,0 +1,16 @@
+.item {
+    height: 100%;
+    width:auto;
+    max-width: 48px;
+    max-height: 48px;
+    margin-right: 10px;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+}
+
+.item:hover{
+    transform: scale(1.5);
+}

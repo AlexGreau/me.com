@@ -1,0 +1,6 @@
+.ContactBar {
+    display: flex;
+    height: 30px;
+    width: 100%;
+    justify-content: center;
+}
