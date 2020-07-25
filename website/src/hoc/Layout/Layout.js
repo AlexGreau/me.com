@@ -5,9 +5,14 @@ import SelfPres from '../../components/description/self/SelfPres';
 import ContactBar from '../../components/ui/contactBar/ContactBar';
 import Logo from '../../components/ui/logo/Logo'
 import ContactMe from '../../components/contactMe/ContactMe';
+import Experience from '../../components/experience/Experience';
+import Abilities from '../../components/abilities/Abilities';
 
 const Layout = (props) => {
-    const CONTACT = useRef(null)
+    const CONTACT = useRef(null);
+    const EXPERIENCE = useRef(null);
+    const ABILITIES = useRef(null);
+
     const scrollToRef = (ref) => {
         window.scrollTo(0, ref.current.offsetTop)
     }
@@ -15,14 +20,22 @@ const Layout = (props) => {
     return (
 
         <div className={classes.container} >
-            <Navbar className={classes.nav} scrollTo={scrollToRef} contactRef={CONTACT} ></Navbar>
+            <Navbar className={classes.nav}
+                scrollTo={scrollToRef}
+                refContact={CONTACT}
+                refExperience={EXPERIENCE}
+                refAbilities={ABILITIES}
+                ></Navbar>
             <header className={classes.header}>
                 <SelfPres></SelfPres>
             </header>
 
-            <hr className={classes.separator} />
+            <hr className={classes.separator} ref={EXPERIENCE}/>
             <main className={classes.main} >
-                {props.children}
+                {/* <hr className={classes.mainSeparator} ref={EXPERIENCE} /> */}
+                <Experience />
+                <hr className={classes.mainSeparator} ref={ABILITIES} />
+                <Abilities/>
                 <hr className={classes.mainSeparator} ref={CONTACT} />
                 <ContactMe />
             </main>

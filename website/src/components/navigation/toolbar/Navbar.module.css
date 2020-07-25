@@ -5,8 +5,12 @@
     align-items: baseline
 }
 
+.LinkSection {
+    display: flex;
+}
+
 @media (max-width: 550px) {
-    .resume {
+    /* .resume {
         font-size: 22px;
-    }
+    } */
 }
