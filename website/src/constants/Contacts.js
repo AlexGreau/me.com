@@ -1,7 +1,6 @@
 import email from '../assets/contactLogos/email.png'
 import github from '../assets/contactLogos/github.png'
 import linkedIn from '../assets/contactLogos/linkedin.png'
-import CV_icon from '../assets/contactLogos/CV_icon.png'
 
 // Linkedin
 const LinkedIn = {
@@ -26,15 +25,6 @@ const Email = {
     link: 'mailto:' + process.env.REACT_APP_EMAIL_ADDRESS,
     img: email
 }
-
-// CV
-const CV = {
-    id: 4,
-    name: "Resume",
-    link: 'mailto:' + process.env.REACT_APP_EMAIL_ADDRESS,
-    img: CV_icon
-}
-
 
 // List of all the contact to be rendered in contact bar
 const CONTACTS = [

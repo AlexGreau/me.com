@@ -30,7 +30,7 @@ const SelfPres = (props) => {
         <div className={classes.Container}>
             <div className={classes.TitleModule}>
                 <h1 className={classes.Hi}>Hi, I'm Alex</h1>
-                <p className={classes.Subtitle}>Designer + developper</p>
+                <p className={classes.Subtitle}>Developper + Designer </p>
                 <hr className={classes.Separator} />
 
                 <p className={classes.Intro}>
