@@ -12,7 +12,6 @@ const Abilities = (props) => {
         fetch(URL)
             .then((response) => response.json()
                 .then(rep => {
-                    // console.log('full response :', rep)
                     for (let elem in rep) {
                         const skillset = [];
                         for (let skill in rep[elem]) {
@@ -21,7 +20,6 @@ const Abilities = (props) => {
                         const family = [elem, skillset];
                         ABILITIES.push(family);
                     }
-                    console.log("final array", ABILITIES)
                     setAbilities(ABILITIES);
                 })
             )
@@ -29,9 +27,6 @@ const Abilities = (props) => {
 
     }, [abilities.length]);
 
-    console.log(abilities.length)
-
-    
     const ListOfAbilities = (
         <React.Fragment>
             {abilities.map(family => {

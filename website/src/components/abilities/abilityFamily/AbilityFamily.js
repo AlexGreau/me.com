@@ -13,7 +13,7 @@ const AbilityFamily = (props) => {
     )
     return (
         <div>
-            <p>{props.name}</p>
+            <h3>{props.name}</h3>
             {skillsList}
         </div>
     )
