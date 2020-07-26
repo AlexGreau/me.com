@@ -25,17 +25,17 @@ const Layout = (props) => {
                 refContact={CONTACT}
                 refExperience={EXPERIENCE}
                 refAbilities={ABILITIES}
-                ></Navbar>
+            ></Navbar>
             <header className={classes.header}>
                 <SelfPres></SelfPres>
             </header>
 
-            <hr className={classes.separator} ref={EXPERIENCE}/>
+            <hr className={classes.separator} ref={ABILITIES} />
             <main className={classes.main} >
-                {/* <hr className={classes.mainSeparator} ref={EXPERIENCE} /> */}
+                {/* <hr className={classes.mainSeparator} ref={ABILITIES} /> */}
+                <Abilities />
+                <hr className={classes.mainSeparator} ref={EXPERIENCE} />
                 <Experience />
-                <hr className={classes.mainSeparator} ref={ABILITIES} />
-                <Abilities/>
                 <hr className={classes.mainSeparator} ref={CONTACT} />
                 <ContactMe />
             </main>

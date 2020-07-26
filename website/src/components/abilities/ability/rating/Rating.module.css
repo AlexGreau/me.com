@@ -1,0 +1,14 @@
+.Rating {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.Filled {
+    color: var(--primary-color);
+}
+
+.Empty {
+    color: var(--secondary-color);
+    opacity: 0.5;
+}
