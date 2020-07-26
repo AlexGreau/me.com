@@ -8,13 +8,13 @@ const Rating = (props) => {
 
     for (let i = 0; i < props.value; i++) {
         FilledStarsArray.push(
-            <i className={"material-icons" + ' ' + classes.Filled}>star</i>
+            <i key={i} className={"material-icons " + classes.Filled}>star</i>
         )
     }
 
     for (let i = props.value; i < MAX_SCORE; i++) {
         EmptyStarsArray.push(
-            <i className={"material-icons" + ' ' + classes.Empty}>star</i>
+            <i key={i} className={"material-icons " + classes.Empty}>star</i>
         )
     }
 
