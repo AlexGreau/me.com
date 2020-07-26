@@ -12,3 +12,20 @@
     color: var(--secondary-color);
     opacity: 0.5;
 }
+
+.Rating i {
+    transition: 300ms;
+}
+
+.Rating:hover i {
+    margin-left: 2px;
+}
+
+@keyframes distanceYoself {
+    from {
+        margin-left: 0px;
+    }
+    to {
+        margin-left: 2px;
+    }
+}
