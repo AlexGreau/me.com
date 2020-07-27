@@ -15,8 +15,9 @@
     font-size: 32px;
     /* text-transform: uppercase; */
     text-align: start;
+    transition: all 0.3s;
 }
 
 .logo:hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
