@@ -7,12 +7,24 @@
     max-width: 300px
 }
 
+.ability>p {
+    transition: 0.3s;
+}
+
+.ability:hover {
+    background-color: var(--secondary-color);
+}
+
 .ability:hover .title {
     margin-left: 3px;
 }
 
-.ability:hover .animatedRating > i {
+.ability:hover .animatedRating>i {
     margin-left: 2px;
+}
+
+.ability:hover p {
+    margin-right: 2px;
 }
 
 .title {
