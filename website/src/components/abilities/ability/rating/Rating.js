@@ -14,7 +14,7 @@ const Rating = (props) => {
 
     for (let i = props.value; i < MAX_SCORE; i++) {
         EmptyStarsArray.push(
-            <i key={i} className={"material-icons " + classes.Empty}>star</i>
+            <i key={i} className={"material-icons " + classes.Empty }>star</i>
         )
     }
 
@@ -29,8 +29,9 @@ const Rating = (props) => {
             {EmptyStarsArray.map(star => star)}
         </React.Fragment>
     )
+    
     return (
-        <div className={classes.Rating}>
+        <div className={classes.Rating + " " + props.animated}>
             {FilledStars}
             {EmptyStars}
         </div>

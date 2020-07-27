@@ -18,15 +18,6 @@
     transition: 300ms;
 }
 
-.Rating:hover i {
+/* .Rating:hover i {
     margin-left: 2px;
-}
-
-@keyframes distanceYoself {
-    from {
-        margin-left: 0px;
-    }
-    to {
-        margin-left: 2px;
-    }
-}
+} */

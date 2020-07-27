@@ -28,13 +28,13 @@ const Abilities = (props) => {
     }, [abilities.length]);
 
     const ListOfAbilities = (
-        <React.Fragment>
+        <div className={classes.Container}>
             {abilities.map(family => {
                 return (
                     <AbilityFamily key={family[0]} name={family[0]} list={family[1]} />
                 )
             })}
-        </React.Fragment>
+        </div>
     )
 
     return (

@@ -3,4 +3,23 @@
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
+    min-width: 250px;
+    max-width: 300px
+}
+
+.ability:hover .title {
+    margin-left: 3px;
+}
+
+.ability:hover .animatedRating > i {
+    margin-left: 2px;
+}
+
+.title {
+    transition: 0.3s;
+}
+
+.animatedRating {
+    /* background-color: blueviolet; */
+    transition: all 0.3s;
 }

@@ -5,15 +5,22 @@ import Ability from '../ability/Ability';
 const AbilityFamily = (props) => {
 
     const skillsList = (
-        <React.Fragment>
-            {props.list.map(skill => {
-                return <Ability key={skill[0]} name={skill[0]} value={skill[1]} />
-            })}
-        </React.Fragment>
+        <div className={classes.skillsList}>
+            <div className={classes.col}>
+                {props.list.map(skill => {
+                    return <Ability key={skill[0]} name={skill[0]} value={skill[1]} />
+                })}
+            </div>
+            <div className={classes.col}>
+                {props.list.map(skill => {
+                    return <Ability key={skill[0]} name={skill[0]} value={skill[1]} />
+                })}
+            </div>
+        </div>
     )
     return (
-        <div>
-            <h3>{props.name}</h3>
+        <div className={classes.family}>
+            <h3 className={classes.title}>{props.name} :</h3>
             {skillsList}
         </div>
     )

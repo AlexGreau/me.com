@@ -6,9 +6,9 @@ const Ability = (props) => {
 
     return (
         <div className={classes.ability}>
-            <p>{props.name} : </p>
+            <p className={classes.title + ' ' + classes.animatedTitle}>{props.name} : </p>
             {
-                isNaN(props.value) ? <p>{props.value}</p> : <Rating value={props.value} />
+                isNaN(props.value) ? <p>{props.value}</p> : <Rating value={props.value} animated={classes.animatedRating}/>
             }
         </div>
     )
