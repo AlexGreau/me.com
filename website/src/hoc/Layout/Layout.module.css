@@ -57,6 +57,10 @@
     opacity: 0.8;
 }
 
+.familyTitle {
+    text-align: center;
+}
+
 @media (max-width: 550px) {
     .nav {
         margin-top: 20px;
@@ -67,8 +71,14 @@
         margin: 20px auto 0 auto;
         width: 100%;
     }
+
     .main {
         margin: 20px auto 0 auto;
         width: 100%;
+    }
+
+    .container{
+        width: 100%;
+        margin: 0;
     }
 }

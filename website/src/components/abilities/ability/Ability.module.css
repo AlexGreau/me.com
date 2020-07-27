@@ -7,12 +7,22 @@
     max-width: 300px
 }
 
-.ability>p {
+.title {
     transition: 0.3s;
 }
 
+.animatedRating {
+    /* background-color: blueviolet; */
+    transition: all 0.3s;
+}
+
+.ability > p {
+    transition: 0.3s;
+}
+
+/* **************************   Effects  ************************** */
 .ability:hover {
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
 }
 
 .ability:hover .title {
@@ -27,11 +37,12 @@
     margin-right: 2px;
 }
 
-.title {
-    transition: 0.3s;
-}
 
-.animatedRating {
-    /* background-color: blueviolet; */
-    transition: all 0.3s;
+
+/* **************************   Breakpoints  ************************** */
+@media (max-width : 550px) {
+    .ability {
+        width: 100%;
+        max-width: 550px;
+    }
 }

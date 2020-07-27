@@ -35,3 +35,15 @@
     margin-right: 15px;
     text-align: center;
 }
+
+@media (max-width : 550px) {
+    .col {
+        margin: 0;
+    }
+}
+
+@media (max-width : 800px) {
+    .col {
+        margin-left: 10px;
+    }
+}

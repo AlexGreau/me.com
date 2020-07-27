@@ -33,11 +33,11 @@ const Layout = (props) => {
             <hr className={classes.separator} ref={ABILITIES} />
             <main className={classes.main} >
                 {/* <hr className={classes.mainSeparator} ref={ABILITIES} /> */}
-                <Abilities />
+                <Abilities familyTitleStyle={classes.familyTitle}/>
                 <hr className={classes.mainSeparator} ref={EXPERIENCE} />
-                <Experience />
+                <Experience familyTitleStyle={classes.familyTitle}/>
                 <hr className={classes.mainSeparator} ref={CONTACT} />
-                <ContactMe />
+                <ContactMe familyTitleStyle={classes.familyTitle}/>
             </main>
 
             <hr className={classes.separator} />

@@ -7,7 +7,7 @@ const Experience = (props) => {
     
     return (
         <div>
-            <h2>Experience</h2>
+            <h2 className={props.familyTitleStyle}>Experience</h2>
             <Education/>
             <Work/>
         </div>

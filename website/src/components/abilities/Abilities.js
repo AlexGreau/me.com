@@ -28,7 +28,7 @@ const Abilities = (props) => {
     }, [abilities.length]);
 
     const ListOfAbilities = (
-        <div className={classes.Container}>
+        <div className={classes.container}>
             {abilities.map(family => {
                 return (
                     <AbilityFamily key={family[0]} name={family[0]} list={family[1]} />
@@ -39,7 +39,7 @@ const Abilities = (props) => {
 
     return (
         <div>
-            <h2>Abilities section</h2>
+            <h2 className={props.familyTitleStyle}>Abilities section</h2>
             {ListOfAbilities}
         </div>
     )
