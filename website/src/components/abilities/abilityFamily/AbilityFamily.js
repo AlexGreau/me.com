@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './AbilityFamily.module.css';
-import Ability from '../ability/Ability';
+import Ability from './ability/Ability';
 
 const AbilityFamily = (props) => {
 
