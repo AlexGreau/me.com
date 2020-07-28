@@ -16,13 +16,26 @@
 
 .skillsList {
     margin-right: 1rem;
-    display: flex;
-    flex-flow: row wrap;
+    /* display: flex;
+    flex-flow: row wrap; */
     padding: 0;
+    columns: 3;
 }
 
 .title {
     margin-left: 1rem;
+}
+
+@media (max-width : 1200px) {
+    .skillsList {
+        columns: 2;
+    }
+}
+
+@media (max-width : 800px) {
+    .skillsList {
+        columns: 1;
+    }
 }
 
 @media (max-width : 550px) {
@@ -31,3 +44,4 @@
         margin-right: 3px;
     }
 }
+
