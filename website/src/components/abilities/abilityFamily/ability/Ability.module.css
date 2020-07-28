@@ -1,10 +1,14 @@
 .ability {
     display: flex;
     flex-flow: row;
-    align-items: center;
+    flex-grow: 1;
     justify-content: space-between;
+    align-items: center;
     min-width: 250px;
-    max-width: 300px
+    max-width: 300px;
+    max-height: 40px;
+    margin-left: 30px;
+    flex-basis: content;
 }
 
 .title {
@@ -12,7 +16,6 @@
 }
 
 .animatedRating {
-    /* background-color: blueviolet; */
     transition: all 0.3s;
 }
 
@@ -21,10 +24,6 @@
 }
 
 /* **************************   Effects  ************************** */
-.ability:hover {
-    /* background-color: var(--secondary-color); */
-}
-
 .ability:hover .title {
     margin-left: 3px;
 }
@@ -40,9 +39,9 @@
 
 
 /* **************************   Breakpoints  ************************** */
-@media (max-width : 550px) {
+@media (max-width : 800px) {
     .ability {
         width: 100%;
-        max-width: 550px;
+        max-width: 100%;
     }
 }

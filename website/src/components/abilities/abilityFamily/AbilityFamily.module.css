@@ -4,7 +4,6 @@
     box-sizing: border-box;
     border-radius: 1rem;
     transition: all 0.2s;
-    margin-right: 15px;
     margin-bottom: 15px;
     min-width: 300px;
     /* max-width: 380px; */
@@ -17,8 +16,9 @@
 
 .skillsList {
     margin-right: 1rem;
-    margin-left: 2rem;
-    columns: 2;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
 }
 
 .title {
@@ -26,17 +26,8 @@
 }
 
 @media (max-width : 550px) {
-
     .family {
         margin-left: 3px;
         margin-right: 3px;
-    }
-
-   
-}
-
-@media (max-width : 800px) {
-    .skillsList {
-        columns: 1;
     }
 }
