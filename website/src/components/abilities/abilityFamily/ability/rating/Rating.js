@@ -31,10 +31,10 @@ const Rating = (props) => {
     )
     
     return (
-        <div className={classes.Rating + " " + props.animated}>
+        <span className={classes.Rating + " " + props.animated}>
             {FilledStars}
             {EmptyStars}
-        </div>
+        </span>
     )
 }
 export default Rating;

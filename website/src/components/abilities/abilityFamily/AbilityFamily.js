@@ -4,25 +4,15 @@ import Ability from './ability/Ability';
 
 const AbilityFamily = (props) => {
 
-    const skillsList = () =>{
-        const half_length = Math.ceil(props.list.length / 2);
-        const firstHalf = [...props.list].splice(0,half_length);
-        const secondHalf = [...props.list].splice(half_length, props.list.length)
-        
+    const skillsList = () => {
         return (
-        <div className={classes.skillsList}>
-            <div className={classes.col}>
-                {firstHalf.map(skill => {
+            <ul className={classes.skillsList}>
+                {props.list.map(skill => {
                     return <Ability key={skill[0]} name={skill[0]} value={skill[1]} />
                 })}
-            </div>
-            <div className={classes.col}>
-                {secondHalf.map(skill => {
-                    return <Ability key={skill[0]} name={skill[0]} value={skill[1]} />
-                })}
-            </div>
-        </div>
-    )}
+            </ul>
+        )
+    }
 
     return (
         <div className={classes.family}>
