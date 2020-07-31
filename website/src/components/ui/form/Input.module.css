@@ -1,0 +1,7 @@
+.InputElement {
+    box-sizing: border-box;
+    border : 1px solid var(--secondary-color);
+    border-radius: 5px;
+    width: 100%;
+    
+}
