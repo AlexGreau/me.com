@@ -48,6 +48,16 @@ const Input = (props) => {
             )
             break;
 
+        case ('submit'):
+            inputElement = <input
+            {...props.elementConfig}
+            className={inputClasses.join(' ') + " " + classes.submit}
+            value={props.value}
+            onChange={props.changed}
+            placeholder={props.placeholder}
+            type='submit'></input>
+            break;
+
         default:
             inputElement = <input
                 {...props.elementConfig}

@@ -11,8 +11,8 @@ const ContactMe = (props) => {
     const QuerySeparator = "&";
     const Me = process.env.REACT_APP_EMAIL_ADDRESS;
 
-    const [Sender_name, setSender_name] = useState('');
-    const [Mail_subject, setMail_subject] = useState(null);
+    // const [Sender_name, setSender_name] = useState('');
+    const [Mail_subject, setMail_subject] = useState('');
     const [Mail_body, setMail_body] = useState("");
     const [SendLink, setSendLink] = useState("mailto:" + Me);
 
@@ -22,8 +22,10 @@ const ContactMe = (props) => {
 
     useEffect(() => {
         setSendLink(buildSendingLink());
+        console.log("updating link: ", SendLink)
+
         return () => { }
-    }, [Sender_name, Mail_subject, Mail_body])
+    }, [Mail_subject, Mail_body])
 
     return (
         <div ref={props.ref} className={classes.contactMe}>
@@ -34,18 +36,26 @@ const ContactMe = (props) => {
                     <a href={SendLink}>{Me}</a>
                     <ContactBar />
                 </div>
-                <div className={classes.form}>
-                    <Input elementType='input' 
-                    value={Mail_subject}
-                    changed={(event) => setMail_subject(event.target.value)}
-                    placeholder={"Subject"}
+                <form className={classes.form}
+                    action={SendLink}
+                >
+                    <Input elementType='input'
+                        value={Mail_subject}
+                        changed={(event) => {
+                            setMail_subject(event.target.value)
+                        }
+                        }
+                        placeholder={"Subject"}
                     />
                     <Input elementType='textarea'
                         value={Mail_body}
                         changed={(event) => setMail_body(event.target.value)}
                         placeholder={"Dear Alex, \n"} />
-                    <Button>Send over</Button>
-                </div>
+
+                    <Input elementType="submit" value="Send over">
+                        {/* <Button>Send over</Button> */}
+                    </Input>
+                </form>
             </div>
         </div>
 
