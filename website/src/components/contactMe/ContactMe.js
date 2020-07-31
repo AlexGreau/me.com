@@ -7,7 +7,6 @@ const ContactMe = (props) => {
     const EmailTarget = "mailto:";
     const EmailSubject = "subject=";
     const EmailBody = "body=";
-    const QuerySeparator = "?";
     const Me = process.env.REACT_APP_EMAIL_ADDRESS;
 
     // const [Sender_name, setSender_name] = useState('');
@@ -16,11 +15,12 @@ const ContactMe = (props) => {
     const [SendLink, setSendLink] = useState("mailto:" + Me);
 
     useEffect(() => {
-        const newLink = EmailTarget + Me + QuerySeparator
-            + EmailSubject + Mail_subject + QuerySeparator
+        const newLink = EmailTarget + Me + "?"
+            + EmailSubject + Mail_subject + "&"
             + EmailBody + Mail_body;
 
         setSendLink(newLink);
+        // console.log(SendLink)
         return () => { }
     }, [Mail_subject, Mail_body])
 
@@ -30,28 +30,26 @@ const ContactMe = (props) => {
             <div className={classes.container}>
                 <div className={classes.contactOptions}>
                     <p>List of contact points OR Form</p>
-                    <a href={SendLink}>{Me}</a>
+                    <a href={SendLink} onClick={()=>console.log(SendLink)}>{Me}</a>
                     <ContactBar />
                 </div>
                 <form className={classes.form}
                     action={SendLink}
-                >
+                    method="post">
                     <Input elementType='input'
                         value={Mail_subject}
                         changed={(event) => {
                             setMail_subject(event.target.value)
                         }
                         }
-                        placeholder={"Subject"}
-                    />
+                        placeholder={"Subject"} />
+
                     <Input elementType='textarea'
                         value={Mail_body}
                         changed={(event) => setMail_body(event.target.value)}
                         placeholder={"Dear Alex, \n"} />
 
-                    <Input elementType="submit" value="Send over">
-                        {/* <Button>Send over</Button> */}
-                    </Input>
+                    <Input elementType="submit" value="Send over" />
                 </form>
             </div>
         </div>
