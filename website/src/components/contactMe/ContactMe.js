@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import classes from './ContactMe.module.css';
 import ContactBar from '../ui/contactBar/ContactBar';
 import Input from '../ui/form/Input';
+import Button from '../ui/button/Button';
 
 const ContactMe = (props) => {
     const EmailTarget = "mailto:";
@@ -11,7 +12,7 @@ const ContactMe = (props) => {
     const Me = process.env.REACT_APP_EMAIL_ADDRESS;
 
     const [Sender_name, setSender_name] = useState('');
-    const [Sender_subject, setSender_subject] = useState(null);
+    const [Mail_subject, setMail_subject] = useState(null);
     const [Mail_body, setMail_body] = useState("");
     const [SendLink, setSendLink] = useState("mailto:" + Me);
 
@@ -22,7 +23,7 @@ const ContactMe = (props) => {
     useEffect(() => {
         setSendLink(buildSendingLink());
         return () => { }
-    }, [Sender_name, Sender_subject, Mail_body])
+    }, [Sender_name, Mail_subject, Mail_body])
 
     return (
         <div ref={props.ref} className={classes.contactMe}>
@@ -34,11 +35,16 @@ const ContactMe = (props) => {
                     <ContactBar />
                 </div>
                 <div className={classes.form}>
-                    <Input elementType='input' />
+                    <Input elementType='input' 
+                    value={Mail_subject}
+                    changed={(event) => setMail_subject(event.target.value)}
+                    placeholder={"Subject"}
+                    />
                     <Input elementType='textarea'
                         value={Mail_body}
                         changed={(event) => setMail_body(event.target.value)}
                         placeholder={"Dear Alex, \n"} />
+                    <Button>Send over</Button>
                 </div>
             </div>
         </div>

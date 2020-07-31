@@ -1,7 +1,12 @@
 .InputElement {
     box-sizing: border-box;
-    border : 1px solid var(--secondary-color);
+    border: 1px solid var(--secondary-color);
     border-radius: 5px;
     width: 100%;
-    
+    min-height: 44px;
+    margin-bottom: 20px;
+    font-size: var(--font-size);
+    font-family: inherit;
+    line-height: 1.7rem;
+    padding-left: 12px;
 }

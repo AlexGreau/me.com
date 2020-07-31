@@ -19,6 +19,7 @@ const Input = (props) => {
                 placeholder={props.placeholder}
             ></input>
             break;
+
         case ('textarea'):
             inputElement = <textarea
                 {...props.elementConfig}
@@ -26,6 +27,7 @@ const Input = (props) => {
                 value={props.value}
                 onChange={props.changed}
                 placeholder={props.placeholder}
+                rows="7"
             />
             break;
 
