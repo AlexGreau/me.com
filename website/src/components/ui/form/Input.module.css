@@ -10,6 +10,7 @@
     line-height: 1.7rem;
     padding-left: 12px;
     resize: vertical;
+    transition: 0.3s;
 }
 
 .submit {

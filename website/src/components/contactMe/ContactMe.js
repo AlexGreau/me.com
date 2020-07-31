@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import classes from './ContactMe.module.css';
 import ContactBar from '../ui/contactBar/ContactBar';
 import Input from '../ui/form/Input';
-import Button from '../ui/button/Button';
 
 const ContactMe = (props) => {
     const EmailTarget = "mailto:";
     const EmailSubject = "subject=";
     const EmailBody = "body=";
-    const QuerySeparator = "&";
+    const QuerySeparator = "?";
     const Me = process.env.REACT_APP_EMAIL_ADDRESS;
 
     // const [Sender_name, setSender_name] = useState('');
@@ -16,14 +15,12 @@ const ContactMe = (props) => {
     const [Mail_body, setMail_body] = useState("");
     const [SendLink, setSendLink] = useState("mailto:" + Me);
 
-    const buildSendingLink = () => {
-        return EmailTarget + Me + QuerySeparator + EmailSubject + QuerySeparator + EmailBody;
-    }
-
     useEffect(() => {
-        setSendLink(buildSendingLink());
-        console.log("updating link: ", SendLink)
+        const newLink = EmailTarget + Me + QuerySeparator
+            + EmailSubject + Mail_subject + QuerySeparator
+            + EmailBody + Mail_body;
 
+        setSendLink(newLink);
         return () => { }
     }, [Mail_subject, Mail_body])
 
