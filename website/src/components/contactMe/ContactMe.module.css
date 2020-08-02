@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.contactOptions {
+    width: 50%;
+}
+
+.form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.textInfoContainer {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    max-width:750px;
+}
+
+.textInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textInfo >span {
+    margin-right: 10px;
+}
+
+.contactBarContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    .contactOptions {
+        width: 100%;
+    }
+    .form {
+        width: 100%;
+    }
+    .textInfoContainer {
+        width: 90%;
+    }
+}

@@ -1,0 +1,7 @@
+.map {
+    width: 25%;
+    min-width: 200px;
+    height: auto;
+    min-height: 200px;
+    background-color: aquamarine;
+}
