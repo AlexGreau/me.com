@@ -11,20 +11,17 @@ import Resume from '../resume/Resume';
 
 const ContactBar = (props) => {
     return (
-        <div className={classes.Container}>
-            <div className={classes.ContactBar}>
-                {/* Adding resume icon to the bar */}
-                <Resume/>
-                {
-                    CONTACTS.map(SOCIAL => {
-                        return (
-                            <ContactItem key={SOCIAL.id} social={SOCIAL} />
-                        )
-                    })
-                }
-            </div>
+        <div className={classes.ContactBar}>
+            {/* Adding resume icon to the bar */}
+            <Resume />
+            {
+                CONTACTS.map(SOCIAL => {
+                    return (
+                        <ContactItem key={SOCIAL.id} social={SOCIAL} />
+                    )
+                })
+            }
         </div>
-
     )
 
 }

@@ -25,14 +25,23 @@ const ContactMe = (props) => {
     }, [Mail_subject, Mail_body])
 
     return (
-        <div ref={props.ref} className={classes.contactMe}>
-            <h2 className={props.familyTitleStyle}>Say hello !</h2>
+        <div ref={props.ref}>
+            <h1 className={props.familyTitleStyle}>Say hello !</h1>
             <div className={classes.container}>
-                <div className={classes.contactOptions}>
-                    <p>List of contact points OR Form</p>
-                    <a href={SendLink} onClick={() => console.log(SendLink)}>{Me}</a>
-                    <ContactBar />
+                {/* <div className={classes.contactOptions}> */}
+                <div className={classes.textInfoContainer}>
+                    <p>If you have a project that you want to get started,
+                             think you need my help with something or just fancy saying hey, then get in touch.</p>
+                    {/* <p className={classes.textInfo}><span class="material-icons">place</span>  Saint-Raphael, FRANCE</p> */}
+                    <p className={classes.textInfo}><span class="material-icons">alternate_email</span>
+                        <a href={SendLink}>{Me}</a>
+                    </p>
+                    <div className={classes.contactBarContainer}>
+                        <ContactBar />
+                    </div>
                 </div>
+
+                {/* </div> */}
                 <form className={classes.form}
                     action={SendLink}
                     method="post">
@@ -52,8 +61,8 @@ const ContactMe = (props) => {
                         changed={(event) => setMail_body(event.target.value)}
                         placeholder={"Dear Alex, \n"}
                         isRequired={true}
-                        label="Enquiry :"   
-                        />
+                        label="Enquiry :"
+                    />
 
                     <Input elementType="submit" value="Send over" />
                 </form>
