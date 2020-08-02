@@ -12,7 +12,7 @@ const ContactMe = (props) => {
     // const [Sender_name, setSender_name] = useState('');
     const [Mail_subject, setMail_subject] = useState('');
     const [Mail_body, setMail_body] = useState("");
-    const [SendLink, setSendLink] = useState("mailto:" + Me);
+    const [SendLink, setSendLink] = useState("");
 
     useEffect(() => {
         const newLink = EmailTarget + Me + "?"
@@ -20,7 +20,7 @@ const ContactMe = (props) => {
             + EmailBody + Mail_body;
 
         setSendLink(newLink);
-        // console.log(SendLink)
+        console.log(SendLink)
         return () => { }
     }, [Mail_subject, Mail_body])
 
@@ -30,7 +30,7 @@ const ContactMe = (props) => {
             <div className={classes.container}>
                 <div className={classes.contactOptions}>
                     <p>List of contact points OR Form</p>
-                    <a href={SendLink} onClick={()=>console.log(SendLink)}>{Me}</a>
+                    <a href={SendLink} onClick={() => console.log(SendLink)}>{Me}</a>
                     <ContactBar />
                 </div>
                 <form className={classes.form}
@@ -40,14 +40,20 @@ const ContactMe = (props) => {
                         value={Mail_subject}
                         changed={(event) => {
                             setMail_subject(event.target.value)
-                        }
-                        }
-                        placeholder={"Subject"} />
+                        }}
+                        placeholder={"Subject"}
+                        isRequired={true}
+                        type="email"
+                        label="Subjet :"
+                    />
 
                     <Input elementType='textarea'
                         value={Mail_body}
                         changed={(event) => setMail_body(event.target.value)}
-                        placeholder={"Dear Alex, \n"} />
+                        placeholder={"Dear Alex, \n"}
+                        isRequired={true}
+                        label="Enquiry :"   
+                        />
 
                     <Input elementType="submit" value="Send over" />
                 </form>

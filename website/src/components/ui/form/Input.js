@@ -6,7 +6,7 @@ const Input = (props) => {
     const inputClasses = [classes.InputElement]
 
     if (!props.isValid && props.shouldValidate) {
-        inputClasses.push(classes.Invalid);
+        inputClasses.push(classes.invalid);
     }
 
     switch (props.elementType) {
@@ -17,6 +17,8 @@ const Input = (props) => {
                 value={props.value}
                 onChange={props.changed}
                 placeholder={props.placeholder}
+                required={props.isRequired}
+                type={props.type}
             ></input>
             break;
 
@@ -28,6 +30,7 @@ const Input = (props) => {
                 onChange={props.changed}
                 placeholder={props.placeholder}
                 rows="7"
+                required={props.isRequired}
             />
             break;
 
