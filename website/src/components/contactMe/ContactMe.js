@@ -33,7 +33,7 @@ const ContactMe = (props) => {
                     <p>If you have a project that you want to get started,
                              think you need my help with something or just fancy saying hey, then get in touch.</p>
                     {/* <p className={classes.textInfo}><span class="material-icons">place</span>  Saint-Raphael, FRANCE</p> */}
-                    <p className={classes.textInfo}><span class="material-icons">alternate_email</span>
+                    <p className={classes.textInfo}><span className="material-icons">alternate_email</span>
                         <a href={SendLink}>{Me}</a>
                     </p>
                     <div className={classes.contactBarContainer}>
