@@ -5,7 +5,7 @@ const Contactitem = (props) => {
     const { name, link, img, id } = props.social;
     const onClick = props.clicked;
     return (
-        <a href={link} className={classes.item} onClick={onClick} key={'item' + id}>
+        <a href={link} target="_blank" className={classes.item} onClick={onClick} key={'item' + id}>
             <img src={img} alt={name} className={classes.img} />
             <span className={classes.tooltiptext}>{name}</span>
         </a>

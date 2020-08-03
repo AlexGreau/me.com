@@ -20,7 +20,6 @@ const ContactMe = (props) => {
             + EmailBody + Mail_body;
 
         setSendLink(newLink);
-        console.log(SendLink)
         return () => { }
     }, [Mail_subject, Mail_body])
 
