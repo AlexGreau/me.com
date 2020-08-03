@@ -35,6 +35,11 @@
     cursor: pointer;
 }
 
+.ContactSection {
+    display: flex;
+    justify-content: center;
+}
+
 @media (min-width: 800px) {
     .SideDrawer {
         display: none;

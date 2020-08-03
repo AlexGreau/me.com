@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Drawer.module.css';
 import Backdrop from '../../ui/backdrop/Brackdrop';
 import NavItem from '../toolbar/navItem/NavItem';
+import ContactBar from '../../ui/contactBar/ContactBar';
 
 const Drawer = (props) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
@@ -20,6 +21,9 @@ const Drawer = (props) => {
                     <NavItem name={"Abilities"} clicked={props.scrollTo} destination={props.refAbilities} />
                     <NavItem name={"Experience"} clicked={props.scrollTo} destination={props.refExperience} />
                     <NavItem name={"Contact"} clicked={props.scrollTo} destination={props.refContact} />
+                </div>
+                <div className={classes.ContactSection}>
+                    <ContactBar />
                 </div>
             </div>
         </React.Fragment>
