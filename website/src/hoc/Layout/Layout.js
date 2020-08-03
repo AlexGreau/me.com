@@ -14,23 +14,34 @@ const Layout = (props) => {
     const EXPERIENCE = useRef(null);
     const ABILITIES = useRef(null);
 
-    const [showManuDrawer, setShowManuDrawer] = useState(false);
+    const [showMenuDrawer, setShowMenuDrawer] = useState(false);
 
     const scrollToRef = (ref) => {
+        if (showMenuDrawer) {
+            closeDrawer();
+        }
         window.scrollTo(0, ref.current.offsetTop)
     }
 
     const closeDrawer = () => {
-        setShowManuDrawer(false)
+        setShowMenuDrawer(false)
     }
 
     const openDrawer = () => {
-        setShowManuDrawer((prevState => !prevState))
+        setShowMenuDrawer((prevState => !prevState))
     }
 
     return (
         <React.Fragment>
-            <Drawer isOpen={showManuDrawer} clicked={closeDrawer}/>
+            <Drawer isOpen={showMenuDrawer}
+                clicked={closeDrawer}
+                scrollTo={scrollToRef}
+                drawerToggleHandler={openDrawer}
+                refContact={CONTACT}
+                refExperience={EXPERIENCE}
+                refAbilities={ABILITIES}
+            />
+
             <div className={classes.container} >
                 <Navbar className={classes.nav}
                     scrollTo={scrollToRef}
