@@ -8,6 +8,7 @@ const Navbar = (props) => {
     return (
         <nav className={classes.NavBar + ' ' + props.className}>
             <Logo></Logo>
+            <span className={"material-icons" + " " + classes.icon} >menu</span>
             <div className={classes.LinkSection}>
                 <NavItem name={"Abilities"} clicked={props.scrollTo} destination={props.refAbilities} />
                 <NavItem name={"Experience"} clicked={props.scrollTo} destination={props.refExperience} />

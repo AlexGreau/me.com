@@ -1,16 +1,30 @@
-.NavBar{
+.NavBar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline
 }
 
+.icon {
+    font-size: 38px;
+    display: none;
+    cursor: pointer;
+}
+
 .LinkSection {
     display: flex;
 }
 
-@media (max-width: 550px) {
-    /* .resume {
-        font-size: 22px;
-    } */
+@media (max-width: 800px) {
+    .NavBar {
+        align-items: unset;
+    }
+
+    .LinkSection {
+        display: none;
+    }
+
+    .icon {
+        display: flex;
+    }
 }
