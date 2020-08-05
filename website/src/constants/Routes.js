@@ -4,7 +4,6 @@ export const PROJECTS = '/projects';
 
 // To files
 export const PROFILE_PIC = "Me/pic_of_me.jpg";
-export const RESUME = 'Me/Resume_2020.pdf';
-
+export const RESUME = 'Me/AlexGreau_OnePageCV_2020.pdf';
 
 export default HOME;

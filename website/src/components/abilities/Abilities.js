@@ -39,7 +39,7 @@ const Abilities = (props) => {
 
     return (
         <div>
-            <h2 className={props.familyTitleStyle}>What I can do</h2>
+            <h1 className={props.familyTitleStyle}>What I can do</h1>
             {ListOfAbilities}
         </div>
     )
