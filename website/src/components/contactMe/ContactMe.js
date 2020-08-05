@@ -51,7 +51,7 @@ const ContactMe = (props) => {
                         }}
                         placeholder={"Subject"}
                         isRequired={true}
-                        type="email"
+                        type="text"
                         label="Subjet :"
                     />
 
@@ -60,6 +60,7 @@ const ContactMe = (props) => {
                         changed={(event) => setMail_body(event.target.value)}
                         placeholder={"Dear Alex, \n"}
                         isRequired={true}
+                        type="text"
                         label="Enquiry :"
                     />
 
