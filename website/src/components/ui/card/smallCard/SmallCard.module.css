@@ -1,0 +1,43 @@
+.container {
+    /* border: 0.5px solid; */
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.title {
+    margin-top: 24px;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-size: 24px;
+}
+
+.img {
+    margin-top: 16px;
+    margin-right: 16px;
+}
+
+.actionSection {
+    margin: 8px;
+    position: relative;
+}
+
+.body {
+    margin: 10px 5px;
+}
+
+/* Animations */
+
+.container:hover {
+    box-shadow: 0 8px 16px 0 var(--secondary-color);
+}
