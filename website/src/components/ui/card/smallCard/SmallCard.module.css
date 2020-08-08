@@ -7,18 +7,25 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     box-sizing: border-box;
     transition: 0.3s;
+    padding:16px;
 }
 
 .header {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 16px;
+    margin-top: 8px;
+}
+
+.company {
+    /* margin-top: 15px; */
 }
 
 .title {
-    margin-top: 24px;
-    margin-left: 16px;
+    margin-top: 10px;
     margin-right: 16px;
+    margin-bottom: 16px;
     font-size: 24px;
 }
 
@@ -33,7 +40,10 @@
 }
 
 .body {
-    margin: 10px 5px;
+    /* margin-top: 15px; */
+    /* margin: 10px 1rem; */
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 
 /* Animations */
