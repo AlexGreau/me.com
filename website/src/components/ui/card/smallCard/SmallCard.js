@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import classes from './SmallCard.module.css';
-import Button from '../../button/Button';
+import { JOBS } from '../../../../constants/Routes'
 
 const SmallCard = (props) => {
+    const [jobs, setJobs] = useState([])
+    
+    useEffect(() => {
+        fetchJobs();
+    }, [jobs.length])
+
+    const fetchJobs = () => {
+        fetch(JOBS)
+            .then((rep) => rep.json()
+                .then(res => {
+                    const experiences = [];
+                    for (let i in Object.entries(res)) {
+                        experiences.push(res[Object.keys(res)[i]])
+                    }
+                    setJobs(experiences)
+                })
+            )
+    }
+
+
+
+
     return (
         <div className={classes.container}>
             <div className={classes.header}>
-                <div className={classes.title}>Title</div>
+                <div className={classes.title}>Research officer </div>
                 <div className={classes.company}>Company</div>
             </div>
             <div className={classes.body}>
