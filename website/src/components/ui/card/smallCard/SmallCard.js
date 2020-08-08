@@ -5,11 +5,11 @@ const SmallCard = (props) => {
     return (
         <div className={classes.container}>
             <div className={classes.header}>
-                <div className={classes.title}>Research officer </div>
-                <div className={classes.company}>Company</div>
+                <div className={classes.title}>{props.title}</div>
+                <div className={classes.company}>{props.company}</div>
             </div>
             <div className={classes.body}>
-                Phasellus finibus, libero et rhoncus cursus, purus mauris rutrum ipsum, sit amet faucibus massa urna at felis.
+                {props.skills}
             </div>
             {/* <div className={classes.actionSection}>
                 <Button>See more</Button>

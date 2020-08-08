@@ -5,7 +5,7 @@ import { JOBS } from '../../../constants/Routes'
 import Spinner from '../../ui/spinner/Spinner'
 
 
-const WorkSection = (props) => { 
+const WorkSection = (props) => {
 
     const [jobs, setJobs] = useState([])
     const url = process.env.REACT_APP_DATABASE_URL + JOBS;
@@ -18,6 +18,7 @@ const WorkSection = (props) => {
         fetch(url)
             .then((rep) => rep.json()
                 .then(res => {
+                    console.log(res)
                     const experiences = [];
                     for (let i in Object.entries(res)) {
                         experiences.push(res[Object.keys(res)[i]])
@@ -29,7 +30,18 @@ const WorkSection = (props) => {
 
 
     const jobsDeck = (
-        Array.isArray(jobs) && jobs.length ?  <SmallCard/> : <Spinner/>
+        Array.isArray(jobs) && jobs.length ?
+            jobs.map(job => {
+                return <SmallCard key={job.id}
+                    title={job.role}
+                    company={job.company}
+                    location={job.location}
+                    skills={job.skills}
+                    startDate={job.start}
+                    endDate={job.end}
+                     />
+            })
+            : <Spinner />
     )
 
     return (
