@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import classes from './WorkSection.module.css';
 import SmallCard from '../../ui/card/smallCard/SmallCard';
 import { JOBS } from '../../../constants/Routes'
+import Spinner from '../../ui/spinner/Spinner'
 
 
 const WorkSection = (props) => { 
@@ -27,10 +28,14 @@ const WorkSection = (props) => {
     }
 
 
+    const jobsDeck = (
+        Array.isArray(jobs) && jobs.length ?  <SmallCard/> : <Spinner/>
+    )
+
     return (
         <div className={classes.container}>
             <h3>Work section</h3>
-            <SmallCard/>
+            {jobsDeck}
         </div>
     )
 }
