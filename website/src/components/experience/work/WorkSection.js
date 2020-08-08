@@ -7,13 +7,14 @@ import { JOBS } from '../../../constants/Routes'
 const WorkSection = (props) => { 
 
     const [jobs, setJobs] = useState([])
+    const url = process.env.REACT_APP_DATABASE_URL + JOBS;
 
     useEffect(() => {
         fetchJobs();
     }, [jobs.length])
 
     const fetchJobs = () => {
-        fetch(JOBS)
+        fetch(url)
             .then((rep) => rep.json()
                 .then(res => {
                     const experiences = [];
