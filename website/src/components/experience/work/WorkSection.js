@@ -18,7 +18,6 @@ const WorkSection = (props) => {
         fetch(url)
             .then((rep) => rep.json()
                 .then(res => {
-                    console.log(res)
                     const experiences = [];
                     for (let i in Object.entries(res)) {
                         experiences.push(res[Object.keys(res)[i]])
@@ -39,7 +38,7 @@ const WorkSection = (props) => {
                     skills={job.skills}
                     startDate={job.start}
                     endDate={job.end}
-                     />
+                />
             })
             : <Spinner />
     )
@@ -47,7 +46,9 @@ const WorkSection = (props) => {
     return (
         <div className={classes.container}>
             <h3>Work section</h3>
-            {jobsDeck}
+            <div className={classes.deck}>
+                {jobsDeck}
+            </div>
         </div>
     )
 }
