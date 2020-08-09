@@ -22,6 +22,14 @@ const WorkSection = (props) => {
                     for (let i in Object.entries(res)) {
                         experiences.push(res[Object.keys(res)[i]])
                     }
+                    // sort the array of experiences : highest id first
+                    experiences.sort((a,b) => {
+                        if (a.id < b.id) {
+                            return 1
+                        } else {    
+                            return -1
+                        }
+                    })
                     setJobs(experiences)
                 })
             )
@@ -33,9 +41,9 @@ const WorkSection = (props) => {
             jobs.map(job => {
                 return <SmallCard key={job.id}
                     title={job.role}
-                    company={job.company}
+                    subtitle={job.company}
                     location={job.location}
-                    skills={job.skills}
+                    body={job.skills}
                     startDate={job.start}
                     endDate={job.end}
                 />

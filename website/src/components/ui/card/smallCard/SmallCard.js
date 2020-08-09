@@ -6,10 +6,10 @@ const SmallCard = (props) => {
         <div className={classes.container}>
             <div className={classes.header}>
                 <div className={classes.title}>{props.title}</div>
-                <div className={classes.company}>{props.company}</div>
+                <div className={classes.subtitle}>{props.subtitle}</div>
             </div>
             <div className={classes.body}>
-                {props.skills}
+                {props.body}
             </div>
             {/* <div className={classes.actionSection}>
                 <Button>See more</Button>
