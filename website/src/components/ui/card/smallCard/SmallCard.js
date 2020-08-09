@@ -11,9 +11,9 @@ const SmallCard = (props) => {
             <div className={classes.body}>
                 {props.body}
             </div>
-            {/* <div className={classes.actionSection}>
-                <Button>See more</Button>
-            </div> */}
+            <div className={classes.footer}>
+                {props.footer}
+            </div>
         </div>
     )
 

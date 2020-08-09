@@ -39,13 +39,14 @@ const WorkSection = (props) => {
     const jobsDeck = (
         Array.isArray(jobs) && jobs.length ?
             jobs.map(job => {
+                const footer = job.start && job.end ? job.start + " - " + job.end : null;
+
                 return <SmallCard key={job.id}
                     title={job.role}
                     subtitle={job.company}
                     location={job.location}
                     body={job.skills}
-                    startDate={job.start}
-                    endDate={job.end}
+                    footer={footer}
                 />
             })
             : <Spinner />
