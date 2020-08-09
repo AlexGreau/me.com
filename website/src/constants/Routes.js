@@ -8,5 +8,6 @@ export const RESUME = 'Me/AlexGreau_OnePageCV_2020.pdf';
 
 // TO DB
 export const JOBS = "/experiences/jobs.json"
+export const DIPLOMAS = "/experiences/education.json"
 
 export default HOME;
