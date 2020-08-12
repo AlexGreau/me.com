@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import classes from './WorkSection.module.css';
 import SmallCard from '../../ui/card/smallCard/SmallCard';
 import { JOBS } from '../../../constants/Routes'
-import Spinner from '../../ui/spinner/Spinner'
+import Spinner from '../../ui/spinner/Spinner';
+import MONTHS from "../../../constants/DateFormats";
 
 
 const WorkSection = (props) => {
@@ -20,7 +21,16 @@ const WorkSection = (props) => {
                 .then(res => {
                     const experiences = [];
                     for (let i in Object.entries(res)) {
-                        experiences.push(res[Object.keys(res)[i]])
+                        const xp = res[Object.keys(res)[i]];
+                        const startDate = new Date (xp.start);
+                        const endDate = new Date (xp.end);
+                        xp.start = MONTHS[startDate.getMonth()] + " " + startDate.getFullYear();
+                        if (!isNaN(endDate)) {
+                            xp.end = MONTHS[endDate.getMonth()] + " " + endDate.getFullYear();
+                        } else {
+                            xp.end = "Ongoing";
+                        }
+                        experiences.push(xp)
                     }
                     // sort the array of experiences : highest id first
                     experiences.sort((a,b) => {
