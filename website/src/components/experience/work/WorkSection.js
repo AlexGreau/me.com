@@ -21,15 +21,8 @@ const WorkSection = (props) => {
                 .then(res => {
                     const experiences = [];
                     for (let i in Object.entries(res)) {
-                        const xp = res[Object.keys(res)[i]];
-                        const startDate = new Date (xp.start);
-                        const endDate = new Date (xp.end);
-                        xp.start = MONTHS[startDate.getMonth()] + " " + startDate.getFullYear();
-                        if (!isNaN(endDate)) {
-                            xp.end = MONTHS[endDate.getMonth()] + " " + endDate.getFullYear();
-                        } else {
-                            xp.end = "Ongoing";
-                        }
+                        // Parsing the date
+                        const xp = parseDate(res[Object.keys(res)[i]]);    
                         experiences.push(xp)
                     }
                     // sort the array of experiences : highest id first
@@ -43,6 +36,18 @@ const WorkSection = (props) => {
                     setJobs(experiences)
                 })
             )
+    }
+
+    const parseDate = (xp) => {
+        const startDate = new Date (xp.start);
+        const endDate = new Date (xp.end);
+        xp.start = MONTHS[startDate.getMonth()] + " " + startDate.getFullYear();
+        if (!isNaN(endDate)) {
+            xp.end = MONTHS[endDate.getMonth()] + " " + endDate.getFullYear();
+        } else {
+            xp.end = "Ongoing";
+        }
+        return xp;
     }
 
 
