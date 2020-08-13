@@ -26,6 +26,7 @@ const WorkSection = (props) => {
                         experiences.push(xp)
                     }
                     // sort the array of experiences : highest id first
+                    // kept "id" as key to have more flexibility
                     experiences.sort((a,b) => {
                         if (a.id < b.id) {
                             return 1
