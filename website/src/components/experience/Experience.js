@@ -16,12 +16,14 @@ const Experience = (props) => {
 
     // states
     const [diplomas, setDiplomas] = useState([]);
-    const [jobs, setJobs] = useState([])
+    const [jobs, setJobs] = useState([]);
+    const [experiences, setExperiences] = useState([]);
 
     // effects
     useEffect(() => {
         fetchDiplomas();
         fetchJobs();
+        sortExperiences();
     }, [diplomas.length, jobs.length])
 
     // fetches
@@ -33,7 +35,6 @@ const Experience = (props) => {
                     for (let i in Object.entries(res)) {
                         education.push(res[Object.keys(res)[i]])
                     }
-                    console.log(education)
                     setDiplomas(education)
                 })
             )
@@ -43,20 +44,11 @@ const Experience = (props) => {
         fetch(url_jobs)
             .then((rep) => rep.json()
                 .then(res => {
-                    const experiences = [];
+                    const workXp = [];
                     for (let i in Object.entries(res)) {
-                        experiences.push(res[Object.keys(res)[i]])
+                        workXp.push(res[Object.keys(res)[i]])
                     }
-                    // sort the array of experiences : highest id first
-                    // kept "id" as key to have more flexibility
-                    experiences.sort((a, b) => {
-                        if (a.id < b.id) {
-                            return 1
-                        } else {
-                            return -1
-                        }
-                    })
-                    setJobs(experiences)
+                    setJobs(workXp)
                 })
             )
     }
@@ -65,6 +57,26 @@ const Experience = (props) => {
     const parseDate = (date) => {
         const startDate = new Date(date);
         return date ? MONTHS[startDate.getMonth()] + " " + startDate.getFullYear() : "Ongoing";
+    }
+
+    const sortExperiences = () => {
+        const EXP = [...diplomas, ...jobs];
+        console.log("before : ",EXP);
+
+        // sorting 
+        EXP.sort((a, b) => {
+            const dateA = new Date(a.start);
+            const dateB = new Date(b.start);
+            if (dateA < dateB) {
+                return 1
+            } else {
+                return -1
+            }
+        })
+
+        console.log("after : ",EXP);
+
+        setExperiences(EXP);
     }
 
     // sub sections 
@@ -99,11 +111,20 @@ const Experience = (props) => {
             : <Spinner />
     )
 
+    const timeline = (
+        Array.isArray(experiences) && experiences.length ?
+            experiences.map((xp, index) => {
+                return <SmallCard
+                    key={index}
+                />
+            })
+            : <Spinner />
+    )
+
     return (
         <div>
             <h1 className={props.familyTitleStyle}>What I have been up to</h1>
-            {jobsDeck}
-            {educationDeck}
+            {timeline}
         </div>
     )
 }
