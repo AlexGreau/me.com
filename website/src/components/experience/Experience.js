@@ -79,6 +79,7 @@ const Experience = (props) => {
                     location={job.location}
                     body={job.skills}
                     footer={footer}
+                    styles={classes.job}
                 />
             })
             : <Spinner />
@@ -92,6 +93,7 @@ const Experience = (props) => {
                     title={dip.name}
                     subtitle={dip.school}
                     footer={parseDate(dip.date)}
+                    styles={classes.diploma}
                 />
             })
             : <Spinner />

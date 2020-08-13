@@ -3,7 +3,7 @@ import classes from './SmallCard.module.css';
 
 const SmallCard = (props) => {
     return (
-        <div className={classes.container}>
+        <div className={classes.container + " " + props.styles}>
             <div className={classes.header}>
                 <div className={classes.title}>{props.title}</div>
                 <div className={classes.subtitle}>{props.subtitle}</div>
