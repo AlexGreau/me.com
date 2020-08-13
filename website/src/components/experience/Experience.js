@@ -45,9 +45,7 @@ const Experience = (props) => {
                 .then(res => {
                     const experiences = [];
                     for (let i in Object.entries(res)) {
-                        // Parsing the date
-                        const xp = parseDate(res[Object.keys(res)[i]]);
-                        experiences.push(xp)
+                        experiences.push(res[Object.keys(res)[i]])
                     }
                     // sort the array of experiences : highest id first
                     // kept "id" as key to have more flexibility
@@ -65,22 +63,15 @@ const Experience = (props) => {
 
     // utility
     const parseDate = (date) => {
-        const startDate = new Date(xp.start);
-        const endDate = new Date(xp.end);
-        xp.start = MONTHS[startDate.getMonth()] + " " + startDate.getFullYear();
-        if (!isNaN(endDate)) {
-            xp.end = MONTHS[endDate.getMonth()] + " " + endDate.getFullYear();
-        } else {
-            xp.end = "Ongoing";
-        }
-        return xp;
+        const startDate = new Date(date);
+        return date ? MONTHS[startDate.getMonth()] + " " + startDate.getFullYear() : "Ongoing";
     }
 
     // sub sections 
     const jobsDeck = (
         Array.isArray(jobs) && jobs.length ?
             jobs.map(job => {
-                const footer = job.start && job.end ? job.start + " - " + job.end : null;
+                const footer = parseDate(job.start) && parseDate(job.end) ? parseDate(job.start) + " - " + parseDate(job.end) : null;
 
                 return <SmallCard key={job.id}
                     title={job.role}
@@ -100,7 +91,7 @@ const Experience = (props) => {
                     key={dip.name}
                     title={dip.name}
                     subtitle={dip.school}
-                    footer={dip.date}
+                    footer={parseDate(dip.date)}
                 />
             })
             : <Spinner />
