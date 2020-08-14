@@ -61,8 +61,6 @@ const Experience = (props) => {
 
     const sortExperiences = () => {
         const EXP = [...diplomas, ...jobs];
-        console.log("before : ",EXP);
-
         // sorting 
         EXP.sort((a, b) => {
             const dateA = new Date(a.start);
@@ -73,50 +71,36 @@ const Experience = (props) => {
                 return -1
             }
         })
-
-        console.log("after : ",EXP);
-
         setExperiences(EXP);
     }
 
     // sub sections 
-    const jobsDeck = (
-        Array.isArray(jobs) && jobs.length ?
-            jobs.map(job => {
-                const footer = parseDate(job.start) && parseDate(job.end) ? parseDate(job.start) + " - " + parseDate(job.end) : null;
-
-                return <SmallCard key={job.id}
-                    title={job.role}
-                    subtitle={job.company}
-                    location={job.location}
-                    body={job.skills}
-                    footer={footer}
-                    styles={classes.job}
-                />
-            })
-            : <Spinner />
-    )
-
-    const educationDeck = (
-        Array.isArray(diplomas) && diplomas.length ?
-            diplomas.map(dip => {
-                return <SmallCard
-                    key={dip.name}
-                    title={dip.name}
-                    subtitle={dip.school}
-                    footer={parseDate(dip.date)}
-                    styles={classes.diploma}
-                />
-            })
-            : <Spinner />
-    )
-
     const timeline = (
         Array.isArray(experiences) && experiences.length ?
             experiences.map((xp, index) => {
-                return <SmallCard
-                    key={index}
-                />
+                let card;
+                if (xp.company) {
+                    const jobFooter = parseDate(xp.start) && parseDate(xp.end) ? parseDate(xp.start) + " - " + parseDate(xp.end) : null;
+                    card = (
+                        <SmallCard key={xp.id}
+                            title={xp.role}
+                            subtitle={xp.company}
+                            location={xp.location}
+                            body={xp.skills}
+                            footer={jobFooter}
+                            styles={classes.job}
+                        />
+                    )
+                } else if (xp.school) {
+                    card = <SmallCard
+                        key={xp.name}
+                        title={xp.name}
+                        subtitle={xp.school}
+                        footer={parseDate(xp.date)}
+                        styles={classes.diploma}
+                    />
+                }
+                return card
             })
             : <Spinner />
     )
