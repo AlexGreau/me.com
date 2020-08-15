@@ -1,32 +1,32 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Spinner from '../ui/spinner/Spinner';
-import SmallCard from '../ui/card/smallCard/SmallCard';
 import { JOBS } from '../../constants/Routes';
 import { DIPLOMAS } from '../../constants/Routes';
 import MONTHS from "../../constants/DateFormats";
 
 
 import classes from './Experience.module.css';
+import Entry from './entry/Entry';
 
 const Experience = (props) => {
-    // url
+    /* url */
     const url_education = process.env.REACT_APP_DATABASE_URL + DIPLOMAS;
     const url_jobs = process.env.REACT_APP_DATABASE_URL + JOBS;
 
-    // states
+    /* states */
     const [diplomas, setDiplomas] = useState([]);
     const [jobs, setJobs] = useState([]);
     const [experiences, setExperiences] = useState([]);
 
-    // effects
+    /* effects */
     useEffect(() => {
         fetchDiplomas();
         fetchJobs();
         sortExperiences();
     }, [diplomas.length, jobs.length])
 
-    // fetches
+    /* fetches */
     const fetchDiplomas = () => {
         fetch(url_education)
             .then((rep) => rep.json()
@@ -53,7 +53,7 @@ const Experience = (props) => {
             )
     }
 
-    // utility
+    /* utility */
     const parseDate = (date) => {
         const startDate = new Date(date);
         return date ? MONTHS[startDate.getMonth()] + " " + startDate.getFullYear() : "Ongoing";
@@ -61,7 +61,7 @@ const Experience = (props) => {
 
     const sortExperiences = () => {
         const EXP = [...diplomas, ...jobs];
-        // sorting 
+        // sorting  
         EXP.sort((a, b) => {
             const dateA = new Date(a.start);
             const dateB = new Date(b.start);
@@ -74,34 +74,36 @@ const Experience = (props) => {
         setExperiences(EXP);
     }
 
-    // sub sections 
+    /* sub sections */
     const timeline = (
         Array.isArray(experiences) && experiences.length ?
-            experiences.map((xp, index) => {
-                let card;
-                if (xp.company) {
-                    const jobFooter = parseDate(xp.start) && parseDate(xp.end) ? parseDate(xp.start) + " - " + parseDate(xp.end) : null;
-                    card = (
-                        <SmallCard key={xp.id}
-                            title={xp.role}
-                            subtitle={xp.company}
-                            location={xp.location}
-                            body={xp.skills}
-                            footer={jobFooter}
-                            styles={classes.job}
+            <ul>{
+                experiences.map((xp, index) => {
+                    let entry;
+                    if (xp.company) {
+                        const jobFooter = parseDate(xp.start) && parseDate(xp.end) ? parseDate(xp.start) + " - " + parseDate(xp.end) : null;
+                        entry = (
+                            <Entry key={xp.id}
+                                title={xp.role}
+                                subtitle={xp.company}
+                                location={xp.location}
+                                body={xp.skills}
+                                dates={jobFooter}
+                                styles={classes.job}
+                            />
+                        )
+                    } else if (xp.school) {
+                        entry = <Entry
+                            key={xp.name}
+                            title={xp.name}
+                            subtitle={xp.school}
+                            dates={parseDate(xp.date)}
+                            styles={classes.diploma}
                         />
-                    )
-                } else if (xp.school) {
-                    card = <SmallCard
-                        key={xp.name}
-                        title={xp.name}
-                        subtitle={xp.school}
-                        footer={parseDate(xp.date)}
-                        styles={classes.diploma}
-                    />
-                }
-                return card
-            })
+                    }
+                    return entry
+                })}
+            </ul>
             : <Spinner />
     )
 
