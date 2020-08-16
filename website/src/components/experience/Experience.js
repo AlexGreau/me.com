@@ -77,7 +77,7 @@ const Experience = (props) => {
     /* sub sections */
     const timeline = (
         Array.isArray(experiences) && experiences.length ?
-            <ul>{
+            <ul className={classes.list}>{
                 experiences.map((xp, index) => {
                     let entry;
                     if (xp.company) {

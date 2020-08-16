@@ -1,0 +1,27 @@
+.date {
+    display: table-cell;
+    width: 230px;
+    text-align: right;
+    margin-right: 30px;
+}
+
+.body {
+    display: table-cell;
+    margin: 0;
+}
+.title {
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.skillset {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+li {
+    list-style: none;
+    display: table;
+    width: 100%;
+    border-spacing: 30px 10px;
+}
