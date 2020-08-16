@@ -6,7 +6,7 @@
 }
 
 .detailDate {
-    display: flex;
+    display: none;
     align-items: center;
 }
 
@@ -47,5 +47,9 @@ li {
 @media (max-width : 800px) {
     .date {
         display: none;
+    }
+
+    .detailDate {
+        display: flex;
     }
 }

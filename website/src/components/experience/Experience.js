@@ -96,7 +96,7 @@ const Experience = (props) => {
                         entry = <Entry
                             key={xp.name}
                             title={xp.name}
-                            subtitle={xp.school}
+                            location={xp.school}
                             dates={parseDate(xp.date)}
                             styles={classes.diploma}
                         />

@@ -11,27 +11,33 @@ const Entry = (props) => {
     )
     const date = (
         props.dates ?
-        <span className={classes.detailDate}>
-            <span class={"material-icons" + " " + classes.icon}>event</span>
-            {props.dates}
-        </span>
-        : null
+            <span className={classes.detailDate}>
+                <span class={"material-icons" + " " + classes.icon}>event</span>
+                {props.dates}
+            </span>
+            : null
     )
 
     const skills = (
         props.body ?
-        <span className={classes.skillset}>
-            <span class={"material-icons" + " " + classes.icon}>construction</span>
-            {props.body}
-        </span>
-        : null
+            <span className={classes.skillset}>
+                <span class={"material-icons" + " " + classes.icon}>construction</span>
+                {props.body}
+            </span>
+            : null
+    )
+
+    const title = (
+        props.subtitle ?
+        <p className={classes.title}><strong >{props.subtitle} : {props.title}</strong></p>
+        : <p className={classes.title}><strong >{props.title}</strong></p>
     )
 
     return (
         <li className={classes.container}>
             <span className={classes.date}>{props.dates}</span>
             <span className={classes.body}>
-                <p className={classes.title}><strong >{props.subtitle} : {props.title}</strong></p>
+                {title}
                 {location}
                 {date}
                 {skills}
