@@ -25,3 +25,10 @@ li {
     width: 100%;
     border-spacing: 30px 10px;
 }
+
+
+@media (max-width : 800px) {
+    .date {
+        display: none;
+    }
+}
