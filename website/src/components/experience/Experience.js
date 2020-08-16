@@ -56,7 +56,7 @@ const Experience = (props) => {
     /* utility */
     const parseDate = (date) => {
         const startDate = new Date(date);
-        return date ? MONTHS[startDate.getMonth()] + " " + startDate.getFullYear() : "Ongoing";
+        return date ? MONTHS[startDate.getMonth()] + " " + startDate.getFullYear() : "Present";
     }
 
     const sortExperiences = () => {

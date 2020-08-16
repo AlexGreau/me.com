@@ -5,6 +5,11 @@
     margin-right: 30px;
 }
 
+.detailDate {
+    display: flex;
+    align-items: center;
+}
+
 .body {
     display: table-cell;
     margin: 0;
@@ -15,8 +20,20 @@
 }
 
 .skillset {
+    margin: 10px 0;
     word-break: break-word;
     overflow-wrap: break-word;
+    display: flex;
+    align-items: initial;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 10px;
 }
 
 li {
