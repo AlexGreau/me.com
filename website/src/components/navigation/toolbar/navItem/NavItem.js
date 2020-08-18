@@ -1,9 +1,10 @@
 import React from 'react';
 import classes from './NavItem.module.css';
+import { Link } from 'react-router-dom';
 
 const NavItem = (props) => {
     return (
-        <div onClick={() => props.clicked(props.destination)} className={classes.NavItem}>{props.name}</div>
+        <Link className={classes.NavItem} to={props.destination}>{props.name}</Link>
     )
 }
 export default NavItem;

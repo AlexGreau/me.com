@@ -18,10 +18,7 @@ const Resume = (props) => {
                 return <ContactItem key={CV.id} social={CV} clicked={firebase.getCV} />;
             }}
         </FirebaseContext.Consumer>
-
     )
-
-
 }
 
 export default Resume;
