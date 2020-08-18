@@ -1,0 +1,10 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: var(--link-color);
+}
+
+.zeub {
+    background-color: aquamarine;
+}

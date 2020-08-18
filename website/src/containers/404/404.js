@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './404.module.css';
+import classes from './NotFound.module.css';
 
 const NotFound404 = (props) => { 
  return (
