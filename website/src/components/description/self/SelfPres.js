@@ -1,9 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
+import { ABOUT } from '../../../constants/Routes';
 import classes from './SelfPres.module.css';
 import { FirebaseContext } from '../../Firebase/server';
-import Spinner from '../../ui/spinner/Spinner'
+import Spinner from '../../ui/spinner/Spinner';
+import Button from '../../ui/button/Button';
 
 const SelfPres = (props) => {
     const [imgURL, setImgURL] = useState(null);
@@ -36,8 +38,9 @@ const SelfPres = (props) => {
                 <p className={classes.Intro}>
                     {/* A Software engineer from France with a focus on Human Computer Interactions and
                     User experience. */}
-                    A short intro to catch visitor's eye and welcoming him ion the website
+                    A short intro to catch visitor's eye and welcoming him on the website
             </p>
+            <Link to={ABOUT}><Button>See my story</Button></Link>
             </div>
             <div className={classes.ImgModule}>
                 <FirebaseContext.Consumer>
