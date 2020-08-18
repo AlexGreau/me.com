@@ -2,11 +2,23 @@ import React from 'react';
 import classes from './Navbar.module.css';
 import Logo from '../../ui/logo/Logo';
 import NavItem from './navItem/NavItem';
+import { FirebaseContext } from '../../Firebase/server';
 
-import {ABOUT, PORTFOLIO, CONTACT} from '../../../constants/Routes'
+
+import { ABOUT, PORTFOLIO, CONTACT } from '../../../constants/Routes'
 
 
 const Navbar = (props) => {
+
+    const Resume = (
+        <FirebaseContext.Consumer>
+            {firebase => {
+                return <NavItem name={"Resume"} clicked={firebase.getCV} />
+            }}
+        </FirebaseContext.Consumer>
+    )
+
+
     return (
         <nav className={classes.NavBar + ' ' + props.className}>
             <Logo></Logo>
@@ -15,7 +27,7 @@ const Navbar = (props) => {
             <div className={classes.LinkSection}>
                 <NavItem name={"About"} destination={ABOUT} />
                 <NavItem name={"Portfolio"} destination={PORTFOLIO} />
-                <NavItem name={"Resume"} destination={props.refContact} />
+                {Resume}
                 <NavItem name={"Contact"} destination={CONTACT} />
             </div>
         </nav>

@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from './Resume.module.css';
 import CV_icon from '../../../assets/contactLogos/CV_icon.png'
 import { FirebaseContext } from '../../Firebase/server';
 import ContactItem from '../contactBar/contactItem/ContactItem';
