@@ -34,8 +34,9 @@ const SelfPres = (props) => {
                 <hr className={classes.Separator} />
 
                 <p className={classes.Intro}>
-                    A Software engineer from France with a focus on Human Computer Interactions and
-                    User experience.
+                    {/* A Software engineer from France with a focus on Human Computer Interactions and
+                    User experience. */}
+                    A short intro to catch visitor's eye and welcoming him ion the website
             </p>
             </div>
             <div className={classes.ImgModule}>

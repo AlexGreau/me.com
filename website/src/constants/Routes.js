@@ -1,6 +1,8 @@
 // Routes
 export const HOME = '/home';
 export const PROJECTS = '/projects';
+export const ABOUT = '/about';
+export const PORTFOLIO = '/portfolio';
 
 // To files
 export const PROFILE_PIC = "Me/pic_of_me.jpg";
