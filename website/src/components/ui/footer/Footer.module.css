@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 20px auto;
+    padding-bottom: 5px;
+    overflow: hidden;
+}

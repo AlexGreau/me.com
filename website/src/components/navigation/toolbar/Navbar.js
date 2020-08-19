@@ -23,7 +23,6 @@ const Navbar = (props) => {
         <nav className={classes.NavBar + ' ' + props.className}>
             <Logo></Logo>
             <span className={"material-icons" + " " + classes.icon} onClick={props.drawerToggleHandler}>menu</span>
-
             <div className={classes.LinkSection}>
                 <NavItem name={"About"} destination={ABOUT} />
                 <NavItem name={"Portfolio"} destination={PORTFOLIO} />
