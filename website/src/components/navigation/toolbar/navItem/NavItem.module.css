@@ -1,9 +1,0 @@
-.NavItem {
-    margin-right: 20px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.NavItem:hover {
-    border-bottom: solid 2px var(--primary-color);
-}

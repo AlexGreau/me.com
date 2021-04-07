@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import HOME from './constants/Routes';
-
-import Layout from './hoc/Layout/Layout';
+import SANDBOX from './constants/Routes';
+import Sandbox from './pages/Sandbox';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <Route exact path='/'>
             <Redirect to={HOME}></Redirect>
           </Route>
-          <Route path={HOME} component={Layout}></Route>
+          <Route path={SANDBOX} component={Sandbox}></Route>
         </Switch>
       </Router>  
     </div>
